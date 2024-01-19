@@ -222,17 +222,16 @@ namespace JwglqProMax_Frontend
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 显示加载中提示
-            this.Cursor = Cursors.WaitCursor;
-            this.Enabled = false;
-            // 获取数据
-            try
+            if (e.ColumnIndex == dataGridView1.Columns["操作"].Index && e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == dataGridView1.Columns["操作"].Index && e.RowIndex >= 0)
+                // 显示加载中提示
+                this.Cursor = Cursors.WaitCursor;
+                this.Enabled = false;
+                // 获取数据
+                try
                 {
                     string cnumber = (string)dataGridView1.Rows[e.RowIndex].Cells["课程编号"].Value;
                     string name = (string)dataGridView1.Rows[e.RowIndex].Cells["课程名称"].Value;
-
                     DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[7];
                     string text = cell.Value.ToString();
                     if (text == "已选")
@@ -242,14 +241,14 @@ namespace JwglqProMax_Frontend
                     // 获取课程详细信息
                     this.getCourseDetailByCNumber(cnumber);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                // 加载完成后恢复窗体操作
+                this.Cursor = Cursors.Default;
+                this.Enabled = true;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            // 加载完成后恢复窗体操作
-            this.Cursor = Cursors.Default;
-            this.Enabled = true;
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -339,13 +338,13 @@ namespace JwglqProMax_Frontend
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 显示加载中提示
-            this.Cursor = Cursors.WaitCursor;
-            this.Enabled = false;
-            // 获取数据
-            try
+            if (e.ColumnIndex == dataGridView2.Columns["操作"].Index && e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == dataGridView2.Columns["操作"].Index && e.RowIndex >= 0)
+                // 显示加载中提示
+                this.Cursor = Cursors.WaitCursor;
+                this.Enabled = false;
+                // 获取数据
+                try
                 {
                     // 添加课程
                     Course currentCourse = new Course(
@@ -368,14 +367,14 @@ namespace JwglqProMax_Frontend
                         MessageBox.Show(msg);
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                // 加载完成后恢复窗体操作
+                this.Cursor = Cursors.Default;
+                this.Enabled = true;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            // 加载完成后恢复窗体操作
-            this.Cursor = Cursors.Default;
-            this.Enabled = true;
         }
     }
 }

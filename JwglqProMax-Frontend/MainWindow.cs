@@ -21,7 +21,6 @@ namespace JwglqProMax_Frontend
 
         private DatabaseManager databaseManager;
         private NetWorkService request = new NetWorkService();
-        private bool isWorking = true;
         private Thread backgroundThread;
 
         // 窗体关闭
@@ -238,7 +237,6 @@ namespace JwglqProMax_Frontend
                 return;
             }
             richTextBox1.Text += "开始抢课\n";
-            this.isWorking = true;
             timer1.Enabled = true;
             this.暂停抢课任务ToolStripMenuItem.Enabled = true;
             this.开启抢课任务ToolStripMenuItem.Enabled = false;
@@ -275,7 +273,7 @@ namespace JwglqProMax_Frontend
                             if (CourseTaskQueue.Count() == 0)
                             {
                                 // 暂停
-                                暂停抢课任务ToolStripMenuItem.PerformClick();
+                                button3.PerformClick();
                                 return;
                             }
                         }
@@ -303,7 +301,6 @@ namespace JwglqProMax_Frontend
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox1.Text += "\n暂停抢课\n";
-            isWorking = false;
             timer1.Enabled = false;
             this.button3.Enabled = false;
             this.button4.Enabled = true;
@@ -321,7 +318,66 @@ namespace JwglqProMax_Frontend
         {
             new AddCourseForm2().ShowDialog();
             this.RefreshTaskQueue();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog dialog = new FolderBrowserDialog();
+                dialog.Description = "请选择文件需要保存的文件夹";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string savePath = dialog.SelectedPath + "\\" + DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".txt";
+                    System.IO.File.WriteAllText(savePath, richTextBox1.Text + "\n\n\n" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss"));
+                    MessageBox.Show("抢课日志已保存至：\n：" + savePath);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new EmailMessage().ShowDialog();
+        }
+        /// <summary>
+        /// 抢课参数设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new SettingsForm().ShowDialog();
+            // 设置抢课时间间隔
+            this.timer1.Interval = Configration.interval;
+        }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button7.PerformClick();
+        }
+
+        private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("当前为体验版本，没有使用说明");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("请添加微信：safeseaa联系技术支持");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("请添加微信：safeseaa反馈问题");
         }
     }
 }

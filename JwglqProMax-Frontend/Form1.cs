@@ -28,6 +28,8 @@ namespace JwglqProMax_Frontend
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             // 数据库操作
             this.databaseManager = new DatabaseManager();
+            // 当前软件版本
+            this.lversion.Text = "当前软件版本:" + Configration.version;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -36,11 +38,15 @@ namespace JwglqProMax_Frontend
             try
             {
                 JObject res = request.get(Configration.BASICURL + "/info/");
-                // MessageBox.Show(res.ToString());
                 // 初始化项目配置信息
                 Configration.jx0502zbid = (string)res["CourseConfig"]["dqjx0502zbid"];
                 this.Text = (string)res["info"]["name"];
-
+                // 判断是否为最新版本
+                if (Configration.version != (string)res["info"]["version"])
+                {
+                    string msg = $"当前软件版本:{Configration.version}\n目前的最新版本:{(string)res["info"]["version"]}\n\n新版本说明:{(string)res["info"]["desc"] }";
+                    MessageBox.Show(msg, "发现新版本");
+                }
                 if (this.isFirstShow)
                 {
                     this.isFirstShow = false;
@@ -115,6 +121,16 @@ namespace JwglqProMax_Frontend
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("点击绿色的‘校园微认证’按钮进行扫码登录");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("当前为测试版本（未发布），没有使用说明");
         }
     }
 }

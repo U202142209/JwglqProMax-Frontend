@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.IO;
 
 namespace JwglqProMax_Frontend
 {
@@ -20,8 +21,15 @@ namespace JwglqProMax_Frontend
             {
                 System.IO.Directory.CreateDirectory(tempFolderPath);
             }
+            // 检查数据库文件是否存在，不存在则创建
+            if (!File.Exists(dbPath))
+            {
+                SQLiteConnection.CreateFile(dbPath);
+            }
             // 链接数据库
-            this.connection = new SQLiteConnection($"Data Source={dbPath};Version=3;");
+            // 创建连接对象
+            string connectionString = $"Data Source={dbPath};Version=3;";
+            this.connection = new SQLiteConnection(connectionString);
             // 打开链接
             this.connection.Open();
             // 创建登录日志表

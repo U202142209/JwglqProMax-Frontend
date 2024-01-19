@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JwglqProMax_Frontend
 {
@@ -11,7 +9,7 @@ namespace JwglqProMax_Frontend
     {
         private static Dictionary<string, Course> courseDictionary = new Dictionary<string, Course>();
 
-        public static Dictionary<string,Course> getCoursesQueue()
+        public static Dictionary<string, Course> getCoursesQueue()
         {
             return courseDictionary;
         }
@@ -31,6 +29,15 @@ namespace JwglqProMax_Frontend
             }
             else
             {
+                // 链接服务器，更新日志
+                try
+                {
+                    NetWorkService.Post(Configration.BASICURL + "/log/addCourseLog/", course.toDictionary());
+                }
+                catch (Exception)
+                {
+
+                }
                 courseDictionary.Add(course.NotificationNumber, course);
                 msg = "Course added successfully.";
                 // 向数据库中添加数据
@@ -54,6 +61,15 @@ namespace JwglqProMax_Frontend
         {
             if (courseDictionary.ContainsKey(NotificationNumber))
             {
+                // 链接服务器，更新日志
+                try
+                {
+                    NetWorkService.Post(Configration.BASICURL + "/log/removeCourseLog/", courseDictionary[NotificationNumber].toDictionary());
+                }
+                catch (Exception)
+                {
+
+                }
                 courseDictionary.Remove(NotificationNumber);
                 msg = "Course removed successfully.";
                 return true;

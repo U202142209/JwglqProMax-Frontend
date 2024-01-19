@@ -24,20 +24,35 @@ namespace JwglqProMax_Frontend
 
         public Course(string cousrseNumber, string notificationNumber, string courseName, string mainTeacher, string enrollmentLimit, string courseAvailability, string courseType, string credits)
         {
-            courseNumber = cousrseNumber;
-            NotificationNumber = notificationNumber;
-            CourseName = courseName;
-            MainTeacher = mainTeacher;
-            EnrollmentLimit = enrollmentLimit;
-            CourseAvailability = courseAvailability;
-            CourseType = courseType;
-            Credits = credits;
+            this.courseNumber = cousrseNumber;
+            this.NotificationNumber = notificationNumber;
+            this.CourseName = courseName;
+            this.MainTeacher = mainTeacher;
+            this.EnrollmentLimit = enrollmentLimit;
+            this.CourseAvailability = courseAvailability;
+            this.CourseType = courseType;
+            this.Credits = credits;
+        }
+
+        public Dictionary<string, string> toDictionary()
+        {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            data.Add("courseNumber", this.courseNumber);
+            data.Add("NotificationNumber", this.NotificationNumber);
+            data.Add("CourseName", this.CourseName);
+            data.Add("MainTeacher", this.MainTeacher);
+            data.Add("EnrollmentLimit", this.EnrollmentLimit);
+            data.Add("CourseAvailability", this.CourseAvailability);
+            data.Add("CourseType", this.CourseType);
+            data.Add("Credits", this.Credits);
+            return data;
         }
 
         public override string ToString()
         {
             return this.CourseName;
         }
+
     }
 
 }
