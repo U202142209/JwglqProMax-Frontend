@@ -121,7 +121,7 @@ namespace JwglqProMax_Frontend
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(17, 349);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(427, 373);
@@ -143,10 +143,10 @@ namespace JwglqProMax_Frontend
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddCourseForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "添加任务";
+            this.Text = "使用课程编号添加";
             this.Load += new System.EventHandler(this.AddCourseForm1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

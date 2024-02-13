@@ -57,14 +57,23 @@ namespace JwglqProMax_Frontend
         /// <param name="NotificationNumber">需要移除的课程的通知单号</param>
         /// <param name="msg">提示消息信息</param>
         /// <returns>是否移除成功</returns>
-        public static bool RemoveCourse(string NotificationNumber, ref string msg)
+        public static bool RemoveCourse(string NotificationNumber, ref string msg, bool isSuccess = false)
         {
             if (courseDictionary.ContainsKey(NotificationNumber))
             {
                 // 链接服务器，更新日志
                 try
                 {
-                    NetWorkService.Post(Configration.BASICURL + "/log/removeCourseLog/", courseDictionary[NotificationNumber].toDictionary());
+                    if (isSuccess)
+                    {
+                        // 发送抢课成功得日志信息
+                            NetWorkService.Post(Configration.BASICURL + "/log/getCourseSuccessfullyLog/", courseDictionary[NotificationNumber].toDictionary());
+                    }
+                    else
+                    {
+                        // 发送移除队列得日志信息
+                        NetWorkService.Post(Configration.BASICURL + "/log/removeCourseLog/", courseDictionary[NotificationNumber].toDictionary());
+                    }
                 }
                 catch (Exception)
                 {

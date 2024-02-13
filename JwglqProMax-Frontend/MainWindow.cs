@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,11 +23,12 @@ namespace JwglqProMax_Frontend
         private DatabaseManager databaseManager;
         private NetWorkService request = new NetWorkService();
         private Thread backgroundThread;
+        private bool hideCloseDialog = false;
 
         // 窗体关闭
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Configration.Logined)
+            if (Configration.Logined && hideCloseDialog==false)
             {
                 DialogResult result = MessageBox.Show("你确定要退出程序吗，退出后所有的抢课任务将被迫终止", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
@@ -201,7 +203,9 @@ namespace JwglqProMax_Frontend
                     // 用户选择了确定按钮
                     // Deleting a course based on its notification number
                     string msg = "";
-                    if (CourseTaskQueue.RemoveCourse(NotificationNumber, ref msg))
+                    // 测试邮箱发送提醒功能，到时候设置为false
+                    if (CourseTaskQueue.RemoveCourse(NotificationNumber, ref msg, false))
+                    //  if (CourseTaskQueue.RemoveCourse(NotificationNumber, ref msg,true))
                     {
                         // 从数据库中删除
                         if (databaseManager.DeleteCourseLog(NotificationNumber) < 0)
@@ -264,7 +268,7 @@ namespace JwglqProMax_Frontend
                             richTextBox1.Text += "\n " + "抢课成功!!!!!";
                             string msg="";
                             // 移除抢课任务
-                            CourseTaskQueue.RemoveCourse(kvp.Value.NotificationNumber,ref msg);
+                            CourseTaskQueue.RemoveCourse(kvp.Value.NotificationNumber,ref msg,true);
                             // 从数据库中删除
                             if (databaseManager.DeleteCourseLog(kvp.Value.NotificationNumber) < 0)
                                 MessageBox.Show("从数据库中删除失败...");
@@ -320,6 +324,7 @@ namespace JwglqProMax_Frontend
             this.RefreshTaskQueue();
         }
 
+        // 保存抢课日志
         private void button6_Click(object sender, EventArgs e)
         {
             try
@@ -338,16 +343,14 @@ namespace JwglqProMax_Frontend
                 MessageBox.Show(error.Message);
             }
         }
-
+        
+        // 开通消息提醒
         private void button5_Click(object sender, EventArgs e)
         {
             new EmailMessage().ShowDialog();
         }
-        /// <summary>
-        /// 抢课参数设置
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        // 抢课参数设置button7
         private void button7_Click(object sender, EventArgs e)
         {
             new SettingsForm().ShowDialog();
@@ -365,19 +368,66 @@ namespace JwglqProMax_Frontend
             Application.Exit();
         }
 
+        // 系统使用说明文档
         private void button10_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("当前为体验版本，没有使用说明");
+            string url = "https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4";
+            System.Diagnostics.Process.Start(url);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请添加微信：safeseaa联系技术支持");
+            // https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4#ZHv8x
+            MessageBox.Show("请添加微信：safeseaa 联系技术支持");
         }
 
+        // 反馈问题
         private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请添加微信：safeseaa反馈问题");
+            string url = "https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4#aWj74";
+            System.Diagnostics.Process.Start(url);
+        }
+
+        private void 保存抢课日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button6.PerformClick();
+        }
+
+        private void 开通消息提醒ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EmailMessage().ShowDialog();
+        }
+
+        private void 抢课参数设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.button7.PerformClick();
+        }
+
+        private void 退出登录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("你确定退出登录吗？将删除所有的缓存数据", "确定", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                this.hideCloseDialog = true;
+                // 清理登录缓存
+                databaseManager.DeleteAllLoginLog();
+                Application.Exit();
+            }
+        }
+
+        private void 系统使用说明ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button10.PerformClick();
+        }
+
+        private void 联系技术支持ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button9.PerformClick();
+        }
+
+        private void 反馈问题ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button8.PerformClick();
         }
     }
 }

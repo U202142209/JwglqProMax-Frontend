@@ -148,7 +148,7 @@ namespace JwglqProMax_Frontend
         private void AddCourseForm1_Load(object sender, EventArgs e)
         {
             textBox1.Text = "1099093";
-            textBox2.Text = "202320241007312";
+            textBox2.Text = "202320242007105";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

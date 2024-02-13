@@ -78,18 +78,20 @@ namespace JwglqProMax_Frontend
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // 检测自动更新
-            try
-            {
-                JObject res = request.get(Configration.BASICURL + "/info/");
-                string msg = "软件信息\n\t名称：" + (string)res["info"]["name"] + "\n\t最新版本：" + (string)res["info"]["version"] + "\n\t当前版本：" + Configration.version + "\n\t备注：" + (string)res["info"]["desc"] + "\n\n作者信息\n\tauthor：" + (string)res["author"]["author"] + "\n\tcontact：" + (string)res["author"]["contact"] + "\n\tQQ：" + (string)res["author"]["qq"] + "\n\twx：" + (string)res["author"]["wx"] + "\n\tgithub：" + (string)res["author"]["github"] + "\n\tblog：" + (string)res["author"]["blog"] + "\n\n当前服务学期\n\t学期名称：" + (string)res["CourseConfig"]["dqjx0502zbid_name"] + "\n\t学期ID：" + (string)res["CourseConfig"]["dqjx0502zbid"];
-                MessageBox.Show(msg);
+            //// 检测自动更新
+            //try
+            //{
+            //    JObject res = request.get(Configration.BASICURL + "/info/");
+            //    string msg = "软件信息\n\t名称：" + (string)res["info"]["name"] + "\n\t最新版本：" + (string)res["info"]["version"] + "\n\t当前版本：" + Configration.version + "\n\t备注：" + (string)res["info"]["desc"] + "\n\n作者信息\n\tauthor：" + (string)res["author"]["author"] + "\n\tcontact：" + (string)res["author"]["contact"] + "\n\tQQ：" + (string)res["author"]["qq"] + "\n\twx：" + (string)res["author"]["wx"] + "\n\tgithub：" + (string)res["author"]["github"] + "\n\tblog：" + (string)res["author"]["blog"] + "\n\n当前服务学期\n\t学期名称：" + (string)res["CourseConfig"]["dqjx0502zbid_name"] + "\n\t学期ID：" + (string)res["CourseConfig"]["dqjx0502zbid"];
+            //    MessageBox.Show(msg);
 
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
+            //}
+            //catch (Exception error)
+            //{
+            //    MessageBox.Show(error.Message);
+            //}
+            string url = "https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4#aWj74";
+            System.Diagnostics.Process.Start(url);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -123,14 +125,18 @@ namespace JwglqProMax_Frontend
             }
         }
 
+        // 系统使用文档
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("点击绿色的‘校园微认证’按钮进行扫码登录");
+            string url = "https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4#AUmts";
+            System.Diagnostics.Process.Start(url);
         }
 
+        // 用户隐私政策与服务条款
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("当前为测试版本（未发布），没有使用说明");
+            string url = "https://www.yuque.com/zhao314159/rthvzo/zyzv233i7v28kcq4#jD2f0";
+            System.Diagnostics.Process.Start(url);
         }
     }
 }

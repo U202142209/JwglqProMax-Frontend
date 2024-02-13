@@ -67,48 +67,48 @@ namespace JwglqProMax_Frontend
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1540, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1540, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 使用说明ToolStripMenuItem
             // 
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
-            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.使用说明ToolStripMenuItem.Text = "使用说明";
             // 
             // 必修课ToolStripMenuItem
             // 
             this.必修课ToolStripMenuItem.Name = "必修课ToolStripMenuItem";
-            this.必修课ToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.必修课ToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.必修课ToolStripMenuItem.Text = "必修课";
             this.必修课ToolStripMenuItem.Click += new System.EventHandler(this.必修课ToolStripMenuItem_Click);
             // 
             // 专业选修课ToolStripMenuItem
             // 
             this.专业选修课ToolStripMenuItem.Name = "专业选修课ToolStripMenuItem";
-            this.专业选修课ToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.专业选修课ToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.专业选修课ToolStripMenuItem.Text = "专业选修课";
             this.专业选修课ToolStripMenuItem.Click += new System.EventHandler(this.专业选修课ToolStripMenuItem_Click);
             // 
             // 素质拓展课ToolStripMenuItem
             // 
             this.素质拓展课ToolStripMenuItem.Name = "素质拓展课ToolStripMenuItem";
-            this.素质拓展课ToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.素质拓展课ToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.素质拓展课ToolStripMenuItem.Text = "素质拓展课";
             this.素质拓展课ToolStripMenuItem.Click += new System.EventHandler(this.素质拓展课ToolStripMenuItem_Click);
             // 
             // 跨专业选课ToolStripMenuItem
             // 
             this.跨专业选课ToolStripMenuItem.Name = "跨专业选课ToolStripMenuItem";
-            this.跨专业选课ToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.跨专业选课ToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.跨专业选课ToolStripMenuItem.Text = "跨专业选课";
             this.跨专业选课ToolStripMenuItem.Click += new System.EventHandler(this.跨专业选课ToolStripMenuItem_Click);
             // 
             // 班级课程ToolStripMenuItem
             // 
             this.班级课程ToolStripMenuItem.Name = "班级课程ToolStripMenuItem";
-            this.班级课程ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.班级课程ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.班级课程ToolStripMenuItem.Text = "班级课程";
             this.班级课程ToolStripMenuItem.Click += new System.EventHandler(this.班级课程ToolStripMenuItem_Click);
             // 
@@ -239,7 +239,7 @@ namespace JwglqProMax_Frontend
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(1001, 31);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(505, 489);
@@ -262,7 +262,7 @@ namespace JwglqProMax_Frontend
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddCourseForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddCourseForm2";
+            this.Text = "从我的教务系统添加";
             this.Load += new System.EventHandler(this.AddCourseForm2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

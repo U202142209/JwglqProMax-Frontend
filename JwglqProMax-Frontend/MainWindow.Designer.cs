@@ -105,20 +105,20 @@ namespace JwglqProMax_Frontend
             this.退出系统ToolStripMenuItem,
             this.退出登录ToolStripMenuItem});
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
-            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.使用说明ToolStripMenuItem.Text = "系统";
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
@@ -127,6 +127,7 @@ namespace JwglqProMax_Frontend
             this.退出登录ToolStripMenuItem.Name = "退出登录ToolStripMenuItem";
             this.退出登录ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.退出登录ToolStripMenuItem.Text = "退出登录";
+            this.退出登录ToolStripMenuItem.Click += new System.EventHandler(this.退出登录ToolStripMenuItem_Click);
             // 
             // 添加任务ToolStripMenuItem
             // 
@@ -139,7 +140,7 @@ namespace JwglqProMax_Frontend
             this.抢课参数设置ToolStripMenuItem});
             this.添加任务ToolStripMenuItem.Enabled = false;
             this.添加任务ToolStripMenuItem.Name = "添加任务ToolStripMenuItem";
-            this.添加任务ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.添加任务ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.添加任务ToolStripMenuItem.Text = "抢课相关";
             // 
             // 添加抢课任务ToolStripMenuItem
@@ -179,20 +180,23 @@ namespace JwglqProMax_Frontend
             // 保存抢课日志ToolStripMenuItem
             // 
             this.保存抢课日志ToolStripMenuItem.Name = "保存抢课日志ToolStripMenuItem";
-            this.保存抢课日志ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.保存抢课日志ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.保存抢课日志ToolStripMenuItem.Text = "保存抢课日志";
+            this.保存抢课日志ToolStripMenuItem.Click += new System.EventHandler(this.保存抢课日志ToolStripMenuItem_Click);
             // 
             // 开通消息提醒ToolStripMenuItem
             // 
             this.开通消息提醒ToolStripMenuItem.Name = "开通消息提醒ToolStripMenuItem";
-            this.开通消息提醒ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.开通消息提醒ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.开通消息提醒ToolStripMenuItem.Text = "开通消息提醒";
+            this.开通消息提醒ToolStripMenuItem.Click += new System.EventHandler(this.开通消息提醒ToolStripMenuItem_Click);
             // 
             // 抢课参数设置ToolStripMenuItem
             // 
             this.抢课参数设置ToolStripMenuItem.Name = "抢课参数设置ToolStripMenuItem";
-            this.抢课参数设置ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.抢课参数设置ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.抢课参数设置ToolStripMenuItem.Text = "抢课参数设置";
+            this.抢课参数设置ToolStripMenuItem.Click += new System.EventHandler(this.抢课参数设置ToolStripMenuItem_Click);
             // 
             // 帮助中心ToolStripMenuItem
             // 
@@ -209,18 +213,21 @@ namespace JwglqProMax_Frontend
             this.系统使用说明ToolStripMenuItem.Name = "系统使用说明ToolStripMenuItem";
             this.系统使用说明ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.系统使用说明ToolStripMenuItem.Text = "系统使用说明文档";
+            this.系统使用说明ToolStripMenuItem.Click += new System.EventHandler(this.系统使用说明ToolStripMenuItem_Click);
             // 
             // 联系技术支持ToolStripMenuItem
             // 
             this.联系技术支持ToolStripMenuItem.Name = "联系技术支持ToolStripMenuItem";
             this.联系技术支持ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.联系技术支持ToolStripMenuItem.Text = "联系技术支持";
+            this.联系技术支持ToolStripMenuItem.Click += new System.EventHandler(this.联系技术支持ToolStripMenuItem_Click);
             // 
             // 反馈问题ToolStripMenuItem
             // 
             this.反馈问题ToolStripMenuItem.Name = "反馈问题ToolStripMenuItem";
             this.反馈问题ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.反馈问题ToolStripMenuItem.Text = "反馈问题";
+            this.反馈问题ToolStripMenuItem.Click += new System.EventHandler(this.反馈问题ToolStripMenuItem_Click);
             // 
             // 个人中心ToolStripMenuItem
             // 
@@ -228,7 +235,7 @@ namespace JwglqProMax_Frontend
             this.我的已选课程ToolStripMenuItem,
             this.数据中心ToolStripMenuItem});
             this.个人中心ToolStripMenuItem.Name = "个人中心ToolStripMenuItem";
-            this.个人中心ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.个人中心ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.个人中心ToolStripMenuItem.Text = "个人中心";
             // 
             // 我的已选课程ToolStripMenuItem
@@ -332,7 +339,7 @@ namespace JwglqProMax_Frontend
             this.button3.Location = new System.Drawing.Point(8, 61);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 29);
+            this.button3.Size = new System.Drawing.Size(191, 40);
             this.button3.TabIndex = 1;
             this.button3.Text = "暂停抢课任务";
             this.button3.UseVisualStyleBackColor = true;
@@ -360,7 +367,7 @@ namespace JwglqProMax_Frontend
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(215, 272);
+            this.groupBox3.Size = new System.Drawing.Size(215, 244);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "辅助功能";
@@ -370,7 +377,7 @@ namespace JwglqProMax_Frontend
             this.button14.Location = new System.Drawing.Point(8, 61);
             this.button14.Margin = new System.Windows.Forms.Padding(4);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(191, 29);
+            this.button14.Size = new System.Drawing.Size(191, 30);
             this.button14.TabIndex = 9;
             this.button14.Text = "清空抢课日志";
             this.button14.UseVisualStyleBackColor = true;
@@ -378,7 +385,7 @@ namespace JwglqProMax_Frontend
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(8, 170);
+            this.button11.Location = new System.Drawing.Point(8, 145);
             this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(191, 29);
@@ -389,10 +396,10 @@ namespace JwglqProMax_Frontend
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(8, 134);
+            this.button7.Location = new System.Drawing.Point(8, 182);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(191, 29);
+            this.button7.Size = new System.Drawing.Size(191, 51);
             this.button7.TabIndex = 2;
             this.button7.Text = "抢课参数设置";
             this.button7.UseVisualStyleBackColor = true;
@@ -400,10 +407,10 @@ namespace JwglqProMax_Frontend
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(8, 98);
+            this.button5.Location = new System.Drawing.Point(8, 99);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 29);
+            this.button5.Size = new System.Drawing.Size(191, 38);
             this.button5.TabIndex = 1;
             this.button5.Text = "开通消息提醒";
             this.button5.UseVisualStyleBackColor = true;
@@ -425,11 +432,11 @@ namespace JwglqProMax_Frontend
             this.groupBox4.Controls.Add(this.button8);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.button10);
-            this.groupBox4.Location = new System.Drawing.Point(16, 574);
+            this.groupBox4.Location = new System.Drawing.Point(16, 554);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(215, 135);
+            this.groupBox4.Size = new System.Drawing.Size(215, 139);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "帮助中心";
@@ -475,7 +482,7 @@ namespace JwglqProMax_Frontend
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(215, 176);
+            this.groupBox5.Size = new System.Drawing.Size(215, 105);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "个人中心";

@@ -163,6 +163,15 @@ namespace JwglqProMax_Frontend
             }
         }
 
+        // 删除所有的登录日志数据
+        public void DeleteAllLoginLog()
+        {
+            string deleteSql = @"DELETE FROM login_log";
+            using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
         // 查询最近登录日志数据
         public LoginLog GetLatestLoginLog()
         {

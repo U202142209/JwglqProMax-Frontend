@@ -126,7 +126,7 @@ namespace JwglqProMax_Frontend
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EmailMessage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EmailMessage";
+            this.Text = "开通消息提醒";
             this.Load += new System.EventHandler(this.EmailMessage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
